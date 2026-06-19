@@ -13,13 +13,15 @@ RUN mamba install -y -q \
     dill==0.3.9 \
     ipympl==0.9.6 \
     matplotlib==3.10.0 \
-    numpy==1.26.4 \
+    numpy==2.1.3 \
     pandas==2.2.3 \
     scikit-image==0.25.1 \
     scikit-learn==1.6.1 \
     scipy==1.15.1 \
     seaborn==0.13.2 \
     xgboost==2.1.4 \
+    joblib==1.4.2 \
+    optuna==3.6.1 \
  && mamba clean -a -f -y
 
 # install - requirements.txt
