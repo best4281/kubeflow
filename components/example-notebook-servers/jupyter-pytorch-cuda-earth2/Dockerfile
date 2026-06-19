@@ -14,7 +14,7 @@ RUN export DEBIAN_FRONTEND=noninteractive \
  && apt-get install -yq --no-install-recommends \
     build-essential \
     ninja-build \
- && mamba install -y \
+ && mamba install -y -q \
     bokeh==3.6.3 \
     cloudpickle==3.1.1 \
     dill==0.3.9 \
@@ -30,10 +30,10 @@ RUN export DEBIAN_FRONTEND=noninteractive \
     joblib==1.4.2 \
     optuna==3.6.1 \
     zarr==3.1.6 \
- && python3 -m pip install --quiet --no-cache-dir "torchinfo==1.8.0" "warp-lang==1.13.0" \
- && python3 -m pip install --no-cache-dir --no-build-isolation "torch-harmonics @ git+https://github.com/NVIDIA/torch-harmonics.git@a632ca748a12bd9f74dbc1e00653317810991f74" \
- && python3 -m pip install --no-cache-dir "makani @ git+https://github.com/NVIDIA/makani.git@b38fcb2799d7dbc146fa60459f3f9823394a8bf1" \
- && python3 -m pip install --no-cache-dir "earth2studio[sfno,interp-modafno,solarradiation-afno]==0.15.0" \
+    warp-lang==1.13.0 \
+ && python3 -m pip install --quiet --no-cache-dir --no-build-isolation "torch-harmonics @ git+https://github.com/NVIDIA/torch-harmonics.git@a632ca748a12bd9f74dbc1e00653317810991f74" \
+ && python3 -m pip install --quiet --no-cache-dir "makani @ git+https://github.com/NVIDIA/makani.git@b38fcb2799d7dbc146fa60459f3f9823394a8bf1" \
+ && python3 -m pip install --quiet --no-cache-dir "earth2studio[sfno,interp-modafno,solarradiation-afno]==0.15.0" \
  && apt-get purge -y --auto-remove \
      build-essential \
      ninja-build \
