@@ -18,7 +18,7 @@ GIT_TREE_STATE := $(shell test -n "`git status --porcelain`" && echo "-dirty" ||
 REGISTRY ?= ghcr.io/kubeflow/kubeflow/notebook-servers
 TAG      ?= sha-$(GIT_COMMIT)$(GIT_TREE_STATE)
 
-IMAGE_NAME := jupyter-pytorch-cuda-full
+IMAGE_NAME := jupyter-pytorch-cuda-earth2
 
 BASE_IMAGE         := $(REGISTRY)/jupyter-pytorch-cuda:$(TAG)
 BASE_IMAGE_FOLDERS := jupyter-pytorch-cuda
